@@ -20,10 +20,6 @@
         <label> No Hp</label>
         <input type="text" name="nohp" class="form-control" value="{{$contact->nohp}}">
     </div>
-    <div class="form-group">
-        <label>Alamat</label>
-        <input type="text" name="alamat" class="form-control" value="{{$contact->alamat}}">
-    </div>
     <div class="form-group pt-4">
         <input type="submit" value="SIMPAN" class="btn btn-primary">
     </div>

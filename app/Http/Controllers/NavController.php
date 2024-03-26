@@ -8,6 +8,7 @@ use App\Http\Controllers\Controller;
 use App\Models\User as ModelsUser;
 use App\Models\User;
 use App\Models\Contact;
+use App\Models\Address;
 
 class NavController extends Controller
 {
@@ -87,4 +88,54 @@ class NavController extends Controller
         $contact->delete();
         return redirect('/contact')->with('flash', 'Data berhasil dihapus'); 
     }
+
+    public function address()
+    {
+        $address = Address::all();
+       
+        return view('address', ['key'=>'address','address'=>$address]);
+    }
+    public function formaddress()
+        {
+            return view('formaddress',['key'=>'address']);
+        }
+
+        public function saveaddress(Request $request)
+        {
+            Address::create([
+                'street'=>$request->street,
+                'city'=>$request->city,
+                'province'=>$request->province,
+                'country'=>$request->country,
+                'postalcode'=>$request->PostalCode,
+            ]);
+            return redirect('/address')->with('flash', 'Data berhasil disimpan');
+        }
+
+
+    public function formeditaddress($id)
+    {
+        $address = Address::find($id);
+        return view('formeditaddress', ['key'=>'address', 'address'=>$address]);
+    }
+
+    public function updateaddress ($id, Request $request)
+    {
+        $address = Address::find($id);
+        $address->street = $request->street;
+        $address->city = $request->city;
+        $address->province= $request->province;
+        $address->country = $request->country;
+        $address->postalcode = $request->postalcode;
+        $address->save();
+        return redirect('/address')->with('flash', 'Data berhasil diubah');
+    }
+
+    public function deleteaddress ($id)
+    {
+        $address = Address::find($id); 
+        $address->delete();
+        return redirect('/address')->with('flash', 'Data berhasil dihapus'); 
+    }
 }
+

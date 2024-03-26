@@ -40,6 +40,7 @@
                     <a class="nav-link {{($key == 'home') ? 'active':''}}" href="/home" role="tab" >Home</a>
                     <a class="nav-link {{($key =='user') ? 'active': ''}}" href="/user" role="tab" >User</a>
                     <a class="nav-link {{($key =='contact') ? 'active': ''}}" href="/contact" role="tab" >Contact</a>
+                    <a class="nav-link {{($key =='address') ? 'active': ''}}" href="/address" role="tab" >Address</a>
                   </div>
             </div>
             <div class="col-lg-10">

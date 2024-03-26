@@ -19,10 +19,6 @@
             <label> No Hp</label>
             <input type="text" name="nohp" class="form-control" placeholder="Masukkan Nomor Handphone">
         </div>
-        <div class="form-group">
-            <label>Alamat</label>
-            <input type="text" name="alamat" class="form-control" placeholder="Masukkan Alamat Lengkap (cth; Ketintang Timur PTT IV 32, Surabaya, Jawa Timur, 60231)">
-        </div>
         <div class="form-group pt-4">
             <input type="submit" value="SIMPAN" class="btn btn-primary">
         </div>

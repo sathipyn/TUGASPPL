@@ -13,10 +13,11 @@ return new class extends Migration
     {
         Schema::create('contact', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('nama depan');
-            $table->string('nama belakang');
-            $table->string('email');
-            $table->string('nohp');
+            $table->string('street');
+            $table->string('city');
+            $table->string('province');
+            $table->string('country');
+            $table->string('postal code');
             $table->timestamps();
         });
     }
@@ -29,3 +30,4 @@ return new class extends Migration
         Schema::dropIfExists('address');
     }
 };
+
