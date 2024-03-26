@@ -21,7 +21,7 @@
                                 <form action="/simpanuser" method="POST">
                                     @csrf
                                     <div class="form-group">
-                                        <label for="">Nama Pengguna</label>
+                                        <label for="">Nama Lengkap</label>
                                         <input type="text" name="nama"
                                            class="form-control" autofocus required>
                                     </div> 
