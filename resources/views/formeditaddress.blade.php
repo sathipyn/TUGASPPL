@@ -22,13 +22,11 @@
     </div>
     <div class="form-group">
         <label>Postal Code</label>
-        <input type="text" name="postalcode" class="form-control" value="{{$adress->postalcode}}">
+        <input type="text" name="postalcode" class="form-control" value="{{$address->postal_code}}">
     </div>
     <div class="form-group pt-4">
         <input type="submit" value="SIMPAN" class="btn btn-primary">
     </div>
 </form>
-
-
 
 @endsection

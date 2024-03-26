@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('title', 'Form Address')
 @section('content')
-    <form action="/address/save" method="POST" class="pt-2 pb-2"> 
+<form action="/address/save" method="POST"> 
         @csrf
         <div class="form-group">
             <label> Street</label>
@@ -25,7 +25,6 @@
         </div>
         <div class="form-group pt-4">
             <input type="submit" value="SIMPAN" class="btn btn-primary">
-        </div>
-        
+        </div>       
     </form>
 @endsection

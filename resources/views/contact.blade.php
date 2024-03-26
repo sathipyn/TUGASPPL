@@ -39,6 +39,7 @@
             <td>{{$c->namabelakang}}</td>
             <td>{{$c->email}}</td>
             <td>{{$c->nohp}}</td>
+            
             <td>
                 <a href="/contact/form-edit/{{$c->id}}" class="btn btn-success"><i class="bi bi-pencil-square"></i></a>
                 <a href="/contact/delete/{{$c->id}}" class="btn btn-danger"><i class="bi bi-trash3-fill"></i></a>

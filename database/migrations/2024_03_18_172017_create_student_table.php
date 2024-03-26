@@ -17,7 +17,9 @@ return new class extends Migration
             $table->string('nama belakang');
             $table->string('email');
             $table->string('nohp');
+            $table->unsignedBigInteger("user_id");
             $table->timestamps();
+            $table->foreign('user_id')->references('id')->on('users');
         });
     }
 
@@ -26,6 +28,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('address');
+        Schema::dropIfExists('student');
     }
 };

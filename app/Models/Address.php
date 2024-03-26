@@ -9,12 +9,17 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 class Address extends Model
 {
     protected $table = 'addresses';
+    protected $primaryKey = "id";
+    protected $keyType = "int";
+    public $incrementing = true;
+    public $timestamps = true;
+    
     protected $fillable = [
         'street',
         'city',
         'province',
         'country',
-        'postal code',
+        'postalcode',
 
     ];
 

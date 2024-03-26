@@ -11,14 +11,16 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('contact', function (Blueprint $table) {
+        Schema::create('addresses', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->unsignedBigInteger("contact_id")->
             $table->string('street');
             $table->string('city');
             $table->string('province');
             $table->string('country');
-            $table->string('postal code');
+            $table->string('postalcode');
             $table->timestamps();
+            $table->foreign("contact_id")->on("contacts")->references("id");
         });
     }
 
@@ -27,7 +29,7 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('address');
+        Schema::dropIfExists('addresses');
     }
 };
 

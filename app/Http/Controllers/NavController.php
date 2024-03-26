@@ -49,7 +49,7 @@ class NavController extends Controller
                 'namabelakang'=>$request->namabelakang,
                 'email'=>$request->email,
                 'nohp'=>$request->nohp,
-                'alamat'=>$request->alamat,
+
             ]);
             return redirect('/contact')->with('flash', 'Data berhasil disimpan');
         }
@@ -77,7 +77,6 @@ class NavController extends Controller
         $contact->namabelakang = $request->namabelakang;
         $contact->email = $request->email;
         $contact->nohp = $request->nohp;
-        $contact->alamat = $request->alamat;
         $contact->save();
         return redirect('/contact')->with('flash', 'Data berhasil diubah');
     }
@@ -86,7 +85,7 @@ class NavController extends Controller
     {
         $contact = Contact::find($id); 
         $contact->delete();
-        return redirect('/contact')->with('flash', 'Data berhasil dihapus'); 
+        return redirect('/contact')->with('flash', 'Data berhasil disimpan'); 
     }
 
     public function address()
@@ -107,8 +106,9 @@ class NavController extends Controller
                 'city'=>$request->city,
                 'province'=>$request->province,
                 'country'=>$request->country,
-                'postalcode'=>$request->PostalCode,
+                'postalcode'=>$request->postalcode,
             ]);
+
             return redirect('/address')->with('flash', 'Data berhasil disimpan');
         }
 

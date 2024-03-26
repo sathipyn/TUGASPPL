@@ -18,17 +18,21 @@ class User extends Authenticatable
      *
      * @var array<int, string>
      */
+    protected $primaryKey = "id";
+    protected $keyType = "int";
+    public $timestamps = true;
+    public $incrementing = true;
     protected $fillable = [
         'name',
         'username',
         'email',
         'password',
     ];
-
     public function contacts(): HasMany
     {
         return $this->hasMany(Contact::class, "user_id", "id");
     }
+
 
     /**
      * The attributes that should be hidden for serialization.

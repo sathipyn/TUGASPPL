@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\NavController;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -32,9 +33,14 @@ Route::get('/contact/form-edit/{id}', [NavController::class, 'formeditcontact'])
 Route::put('/contact/update/{id}', [NavController::class, 'update'])->middleware('auth');
 Route::get('/contact/delete/{id}', [NavController::class, 'delete'])->middleware('auth');
 
+
 Route::get('/address', [NavController::class, 'address'])->middleware('auth');
 Route::get('/address/form', [NavController::class, 'formaddress'])->middleware('auth');
 Route::post('/address/save', [NavController::class, 'saveaddress'])->middleware('auth');
 Route::get('/address/form-edit/{id}', [NavController::class, 'formeditaddress'])->middleware('auth');
 Route::put('/address/update/{id}', [NavController::class, 'updateaddress'])->middleware('auth');
 Route::get('/address/delete/{id}', [NavController::class, 'deleteaddress'])->middleware('auth');
+
+
+
+

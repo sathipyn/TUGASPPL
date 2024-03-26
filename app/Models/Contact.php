@@ -9,7 +9,13 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Contact extends Model
 {
+    use HasFactory;
     protected $table = 'student';
+    protected $primaryKey = "id";
+    protected $keyType = "int";
+    public $incrementing = true;
+    public $timestamps = true;
+
     protected $fillable = [
         'namadepan',
         'namabelakang',
@@ -18,6 +24,7 @@ class Contact extends Model
         
 
     ];
+
     public function user(): BelongsTo
     {
         return $this->belongsTo(Contact::class, "user_id", "id");
